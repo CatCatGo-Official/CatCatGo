@@ -22,8 +22,13 @@
   <div class="search-results container">
     <?php
     if(!$q){
-      echo "You didn't input anything";
-      return;
+    ?>
+    <br>
+    <div class="alert alert-danger" role="alert">
+      Umm, try searching something ¯\_(ツ)_/¯
+    </div>
+    <?php
+    return;
     }
 
     $curl = curl_init("https://api.duckduckgo.com/?q=".$q."&format=json&pretty=1");
@@ -33,23 +38,39 @@
     $json_res = curl_exec($curl);
 
     $array_res = json_decode($json_res);
-
-    $search_results = $array_res->Results;
     ?>
     <br>
     <div class="alert alert-info">
       <h4 class="alert-heading"><?php echo $array_res->Heading; ?></h4>
       <?php echo $array_res->Abstract; ?>
     </div>
-
+    <?php
+    foreach($array_res->Results as $topic){
+    ?>
     <div class="card">
-      <?php
-      $results = $array_res->Results;
-      ?>
-      <div class="card-title">
-        <?php echo $results; ?>
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $topic->Result; ?></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><?php echo $topic->FirstURL; ?></h6>
       </div>
     </div>
+    <br>
+    <?php
+    }
+    ?>
+    <br>
+    <?php
+    foreach($array_res->RelatedTopics as $topic){
+    ?>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $topic->Result; ?></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><?php echo $topic->FirstURL; ?></h6>
+      </div>
+    </div>
+    <br>
+    <?php
+    }
+    ?>
   </div>
   <?php
   include "includes/footer.php";

@@ -16,7 +16,5 @@
 
     <link href="https://catcatgo.xyz/assets/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script async src="https://catcatgo-analitics.netlify.app/tracker.js" data-ackee-server="https://catcatgo-analitics.netlify.app" data-ackee-domain-id="fa6bbb4f-d5df-43d6-828e-236584c677c5"></script>
   </head>
   <body>

@@ -5,11 +5,18 @@ body {
 }
 
 .menu{
-  align-items: right;
+  align-items: center;
 }
 
 .search-index {
   text-align: center;
   margin: 8% auto;
   width: 50%;
+}
+
+.about{
+  text-align: center;
+  margin: 8% auto;
+  width: 50%;
+  border: 1;
 }

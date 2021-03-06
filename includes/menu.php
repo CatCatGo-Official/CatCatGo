@@ -5,8 +5,9 @@
   <div class="collapse" id="menu">
       <nav class="nav flex-column">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="https://catcatgo.xyz/about.php">About</a>
         <a class="nav-link" href="https://www.buymeacoffee.com/CatCatGo">Donate</a>
-        <a class="nav-link" href="https://community.catcatgo.xyz/">Community</a>
+        <a class="nav-link" href="https://catcatgo.xyz/about.php#links">Other Links</a>
       </nav>
   </div>
 </div>
